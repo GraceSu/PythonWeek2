@@ -1,0 +1,19 @@
+# -*-coding: utf-8 -*-
+money=input('Please input how much you want to withdraw: ')
+savedMoney=5000
+leftMoney=savedMoney-money
+
+f = open("ATM.txt","w")	
+
+if leftMoney<0:
+	f.write("Your account is not enough money for you to withdraw.\n")
+elif leftMoney==0:
+	f.write("You withdraw all the money from the bank.\n")
+else:
+	f.write("You still have %d in your account.\n" %(leftMoney))
+	f.close()
+
+	g = open("ATM.txt")
+	line=g.readline()
+	print line
+	g.close()
